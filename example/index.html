@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Storage.js, Simple HTML5 Page Edits</title>
+	
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/application.css" />
+</head>
+<body>
+	<div class="container storagejs">
+		<div class="storagejs-header">
+			<h1 class="Three-Dee">Storage.js</h1>
+			<h2 class="awesome">Simple HTML5 page edits. Storage.js uses the new HTML5 <code>contenteditable</code> attribute and <code>localStorage</code> to bring you HTML5 awesomeness.</h2>
+		</div>
+		<div class="example">
+			<h2>I am an example, click me!</h2>
+		    <p class="editable"><b>So am I, click me too!</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctu.</p>
+			<h3 class="me-too" id="refresh">I'm another example. Go ahead, click me to change my text, click somewhere random on the page then refresh the browser.<span style="font-size:21px;"> My text will still say what you just changed it too a few seconds ago!</span></h3><h3 class="me-too">Now try this...<br /><br /></h3><h3 class="me-too" id="quit">Go ahead, click me to change my text again then click somewhere random on the page. After that, quit your browser, that's right quit it! Next, come back to this page ... <span style="font-size:21px;">notice how my text is still what you just changed it too!</span> </h3>
+			<h3 class="me-too" id="onStart">I'm an example of the onStart event. Click me to change my text! </h3>
+			<h3 class="me-too" id="onExit">I'm an example of the onExit event. Click me to change my text, then click somewhere random on the page to see me in action. </h3>
+			<h3 class="me-too" id="onStartExit">I'm an example of the the onStart <span>&amp;</span> onExit events. Click me to change my text, then click somewhere random on the page to see me in action. </h3>
+			<h3 class="me-too" id="revert">I'm an example of the revert option. Click me to change my text then click somewhere random on the page. <span style="font-size:21px;"><br /> I am unique because my text isn't persistent across browser refreshes. You can still edit my text though, and it will remain what you just changed it too, but only until the next time you refresh your browser. </span></h3>
+			<br /><br />
+			<h3 class="me-too" id="beforeSave">I'm an example of the beforeSave event. Click me to change my text, then click somewhere random on the page and watch what happens.</h3>
+			<br /><br />
+			<h3 class="me-too" id="afterSave">I'm an example of the afterSave event. Click me to change my text, then click somewhere random on the page and watch what happens.</h3>
+			<br /><br />
+			<h3 class="me-too" id="beforeAfterSave">I'm an example of both the beforeSave <span> &amp;</span> afterSave events. Click me to change my text, then click somewhere random on the page and watch what happens.</h3>
+			<br /><br />
+			<h3 class="me-too" id="store">I am an example of the store option. Im similar to the revert option except my text doesn't get saved to localStorage. Useful if you have a huge table of data you want to 'Storagify' but don't want to bloat localStorage with a key for each table cell. The onStart and onExit events still work and my text is still editable, in fact...click me to change my text, then click somewhere random on the page. After someone edits me, you could do an AJAX request with my new value in the onExit event (optionally passing through the elem and text paramters described below)</h3>
+		</div>
+		<div class="api-options" id="api-options">
+				<h2 class="storagejs-usage-header" style="text-align:left;">API &amp; Options</h2>
+
+				<table class="zebra-striped" id="apiTable">
+				        <thead>
+				          <tr>
+				            <th class="red">Option</th>
+				            <th class="green">Type</th>
+				            <th class="blue">Default</th>
+							<th class="orange">Description</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>storageKey</td>
+				            <td>String</td>
+				            <td>'storageKey'</td>
+				            <td>This will be the elements key in <code>localStorage</code></td>
+				          </tr>
+				          <tr>
+				            <td>onStart
+								<br />
+								<br />
+								<ul>
+									<li>elem</li>
+									<li>text</li>
+								</ul>
+							</td>
+				            <td>Function
+								<br />
+								<br />
+								<ul>
+									<li>Parameter</li>
+									<li>Parameter</li>
+								</ul>
+							</td>
+				            <td>Nothing
+								<br />
+								<br />
+								<ul>
+									<li>Nothing</li>
+									<li>Nothing</li>
+								</ul>
+							</td>
+				            <td>This event is triggered when the the element has focus
+					
+								<br />
+								<br />
+								<ul>
+									<li>An optional parameter of the onStart function that returns the current element as a 'jQuerified' Object</li>
+									<li>An optional parameter of the onStart function that returns the current text of the element. </li>
+								</ul>
+							</td>
+				          </tr>
+				          <tr>
+				            <td>onExit
+								<br />
+								<br />
+								<ul>
+									<li>elem</li>
+									<li>text</li>
+								</ul>
+							</td>
+				            <td>Function
+								<br />
+								<br />
+								<ul>
+									<li>Parameter</li>
+									<li>Parameter</li>
+								</ul>
+							</td>
+				            <td>Nothing
+								<br />
+								<br />
+								<ul>
+									<li>Nothing</li>
+									<li>Nothing</li>
+								</ul>
+							</td>
+				            <td>This event is triggered when the element has lost focus, when the user has clicked away from the element. Useful for doing AJAX request with the new value of the element.
+								<br />
+								<br />
+								<ul>
+									<li>An optional parameter of the onExit function that returns the current element as a 'jQuerified' Object</li>
+									<li>An optional parameter of the onExit function that returns the current text of the element [As it may may have changed] </li>
+								</ul>
+							</td>
+				          </tr>
+						  <tr>
+				            <td>revert</td>
+				            <td>Boolean</td>
+				            <td>false</td>
+				            <td>When true, reverts the element's text back to what it was before Storage.js got a hold of it</td>
+				          </tr>
+						  <tr>
+				            <td>beforeSave
+								<br />
+								<br />
+								<ul>
+									<li>elem</li>
+									<li>text</li>
+								</ul>
+							</td>
+				            <td>Function
+								<br />
+								<br />
+								<ul>
+									<li>Parameter</li>
+									<li>Parameter</li>
+								</ul>
+							</td>
+				            <td>Nothing
+								<br />
+								<br />
+								<ul>
+									<li>Nothing</li>
+									<li>Nothing</li>
+								</ul>
+							</td>
+				            <td>This event is triggered just before the elements text is saved to <code>localStorage</code>
+								<br />
+								<br />
+								<ul>
+									<li>An optional parameter of the onExit function that returns the current element as a 'jQuerified' Object</li>
+									<li>An optional parameter of the onExit function that returns the current text of the element [As it may may have changed] </li>
+								</ul>
+							</td>
+				          </tr>
+						<tr>
+				            <td>afterSave
+								<br />
+								<br />
+								<ul>
+									<li>elem</li>
+									<li>text</li>
+								</ul>
+							</td>
+				            <td>Function
+								<br />
+								<br />
+								<ul>
+									<li>Parameter</li>
+									<li>Parameter</li>
+								</ul>
+							</td>
+				            <td>Nothing
+								<br />
+								<br />
+								<ul>
+									<li>Nothing</li>
+									<li>Nothing</li>
+								</ul>
+							</td>
+				            <td>This event is triggered just after the elements text has been succesfully saved to <code>localStorage</code>
+								<br />
+								<br />
+								<ul>
+									<li>An optional parameter of the onExit function that returns the current element as a 'jQuerified' Object</li>
+									<li>An optional parameter of the onExit function that returns the current text of the element [As it may may have changed] </li>
+								</ul>
+							</td>
+				          </tr>
+						 <tr>
+				            <td>store</td>
+				            <td>Boolean</td>
+				            <td>true</td>
+				            <td>When false, the elements text will not be saved to <code>localStorage</code></td>
+				          </tr>
+				        </tbody>
+				 </table>
+		</div>
+		<div class="usage">
+			<h2 class="storagejs-usage-header">Usage</h2>
+			<h3>First include the latest version of jQuery</h3>
+			<code class="instructions">&lt;script src="http://code.jquery.com/jquery.min.js"&gt;&lt;/script&gt;</code>
+			<h3>Next, download and include Storage.js</h3>
+			<code class="instructions">&lt;script src="/path/to/storage.min.js"&gt;&lt;/script&gt;</code>
+			<h3>Last but not least, call Storage.js on whatever elements you wish to editable.</h3>
+			<code class="instructions">$('#theElement').storage({storageKey:'storageKey'});</code>
+			<ul>
+			    <li><code>$('#element')</code> is the element you want the HTML5 <code>contentEditable</code> attribute to placed on</li>
+			    <li>The 'storageKey' is what will the element's key will be in <code >localStorage</code></li>
+				<li>For a complete list of options you can pass please refer to the <a href="#api-options" class="api-link">API &amp; Options section</a></li>
+			</ul>
+			<h2 class="storagejs-done-instructions">That's it! Have Fun!</h2>
+		</div>
+		<div class="buttons">
+			<div class="gitbuttons">
+				<a class="btn large primary github button" href="https://github.com/ekdevdes/storage.js">Check it out on github</a>
+				<a href="https://github.com/ekdevdes/storage.js" class="btn large button">Fork it on Github</a>
+			</div>
+			<div class="siteButtons">
+				<a href="http://ek.alphaschildren.org/projects/storagejs/storage.js" class="btn small github button">Download Uncompressed Source <b>4+ KB</b> &darr;</a>
+				<a href="http://ek.alphaschildren.org/projects/storagejs/storage.min.js" class="btn small github button">Download Compressed Source <b>4 KB</b> &darr;</a>
+			</div>
+		</div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
+	<script src="../storage.min.js"></script>
+	<script>
+	
+		$a = {}; // I keep common site-wide actions here
+		$a.scrollTo = function (jQuerySelector,speed,offset,callback) {
+		        var $selected = jQuery(jQuerySelector).eq(0);
+		        if (!callback) callback = function() {};
+		        if (offset === undefined) offset = 0;
+		        if (speed === undefined) speed = 0;
+		        jQuery('html, body').animate({
+		                scrollTop: $selected.offset().top+offset
+		        }, speed,callback);
+		}
+	</script>
+	<script type="text/javascript">
+		$('p.editable').storage({
+			storageKey:'exampleParagraph'
+		});
+		$('.example h2').filter(':first').storage({
+				storageKey:'exampleHeader'
+			});
+			$('#refresh').storage({
+				storageKey:'resfreshText'
+			});
+			$('#quit').storage({
+				storageKey:'quitText'
+			});
+		
+			
+			$('#onStart').storage({
+						storageKey:'onStartText',
+						onStart:function(){
+							
+							//You can also optionally pass in the elem/text parameters, if you like
+							
+							var $this = $(this);
+							
+							$this.animate({opacity:1});
+							
+						}
+					});
+			
+			
+			$('#onExit').storage({
+					storageKey:'onExitText',
+					onExit:function(){
+						
+						//You can also optionally pass in the elem/text parameters, if you like
+						
+						var $this = $(this);
+						
+						$this.animate({opacity:0.5});
+						
+					}
+				}); 
+				
+			$('#onStartExit').storage({
+										storageKey:'onStartExitText',
+										onStart:function(){
+											
+											//You can also optionally pass in the elem/text parameters, if you like
+											
+											var $this = $(this);
+											
+											$this.animate({opacity:0.5});
+											
+										},
+										onExit:function(){
+											var $this = $(this);
+											
+											$this.animate({opacity:1});
+										},
+										beforeSave:function(elem, text){
+											var $this = $(this);
+											
+											alert('just about save "' + text + '" to localStorage');
+										},
+										afterSave:function(elem,text){
+											var $this = $(this);
+											
+											alert('just finished saving "' + text + '" to localStorage');
+										} 
+										
+									}); 
+			
+			$('#revert').storage({
+					storageKey:'revertKey',
+					revert:true
+				});
+				
+			$('#beforeSave').storage({
+				storageKey:'beforeSave',
+				beforeSave:function(elem, text){
+					var $this = $(this);
+					
+					alert('Just about save "' + text + '" to localStorage');
+				}
+			});
+			
+			$('#afterSave').storage({
+				storageKey:'afterSave',
+				afterSave:function(elem,text){
+					var $this = $(this);
+					
+					alert('Just finished saving "' + text + '" to localStorage');
+				}
+			});
+			
+			$('#beforeAfterSave').storage({
+				storageKey:'beforeAfterSave',
+				beforeSave:function(elem, text){
+					var $this = $(this);
+					
+					alert('just about save "' + text + '" to localStorage');
+				},
+				afterSave:function(elem,text){
+					var $this = $(this);
+					
+					alert('just finished saving "' + text + '" to localStorage');
+				}
+			});
+			
+			$('#store').storage({
+				storageKey:'theStoreKey',
+				store: false
+			});
+	
+		$("table#apiTable").tablesorter({ sortList: [[1,0]] });
+		
+		$('a.api-link').click(function () {
+		        $a.scrollTo('#api-options','fast',-50);
+				return false;
+		});
+		
+	</script>
+	<script>
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18667786-4']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	<script>
+	    var GoSquared={};
+	    GoSquared.acct = "GSN-497296-W";
+	    (function(w){
+	        function gs(){
+	            w._gstc_lt=+(new Date); var d=document;
+	            var g = d.createElement("script"); g.type = "text/javascript"; g.async = true; g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+	            var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);
+	        }
+	        w.addEventListener?w.addEventListener("load",gs,false):w.attachEvent("onload",gs);
+	    })(window);
+	</script>
+</body>
+</html>
