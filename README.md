@@ -13,7 +13,7 @@ First include the latest version of jQuery
 Next, download and include Storage.js  
 
 ``` html
-<script src="/path/to/jquery.storagify.min.js"></script>
+<script src="/path/to/storage.min.js"></script>
 ```
 
 Last but not least, call Storage.js on whatever elements you wish to editable.
