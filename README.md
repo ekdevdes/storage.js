@@ -1,4 +1,4 @@
-Storage.js
+Storage.js v1.6
 =========
 
 Usage

@@ -1,4 +1,6 @@
 /*
+	Storage.js v1.6
+
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
 	STORAGE.JS IS DOUBLE LICENSED UNDER THE MIT LICENSE AND GPL LICENSE
