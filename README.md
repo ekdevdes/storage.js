@@ -1,6 +1,8 @@
 Storage.js v1.6.1
 =========
 
+If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).
+
 Usage
 -----
 
@@ -27,6 +29,7 @@ $('#theElement').storage({storageKey:'storageKey'});
 +	For a complete list of options you can pass please refer to the [API &amp; Options Section of the Website](http://ek.alphaschildren.org/projects/storagejs/#api-options)
 
 __That's it! Have Fun!__
+
 
 Bug Reporter & Feature Requests
 ------------
