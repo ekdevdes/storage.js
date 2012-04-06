@@ -1,4 +1,4 @@
-Storage.js v1.6.1
+Storage.js v1.6.2
 =========
 
 If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).

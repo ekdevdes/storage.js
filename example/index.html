@@ -37,7 +37,7 @@
 		<div class="api-options" id="api-options">
 				<h2 class="storagejs-usage-header" style="text-align:left;">API &amp; Options</h2>
 
-				<table class="zebra-striped" id="apiTable">
+				<table class="zebra-striped">
 				        <thead>
 				          <tr>
 				            <th class="red">Option</th>
@@ -233,7 +233,6 @@
 	</div>
 	
 	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
 	<script src="../storage.min.js"></script>
 	<script>
 	
@@ -360,8 +359,6 @@
 				storageKey:'theStoreKey',
 				store: false
 			});
-	
-		$("table#apiTable").tablesorter({ sortList: [[1,0]] });
 		
 		$('a.api-link').click(function () {
 		        $a.scrollTo('#api-options','fast',-50);

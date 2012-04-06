@@ -1,5 +1,5 @@
 /*
-	Storage.js v1.6.1
+	Storage.js v1.6.2
 
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
@@ -53,23 +53,34 @@
 				$text = $this.text(),
 				origKey = "orig" + settings.storageKey;
 				
+			$this.attr("data-orig-text",$text);
+
 			if(settings.store){
 				localStorage.setItem(origKey,$text);
 			}
-			
+
 			$this.attr('contenteditable','');
 			
 			if (settings.store) {
 				if(settings.revert){
 					$this.text(localStorage.getItem(origKey));
+
+					if ($this.text() == "" || $this.text() == "null") {
+						$this.text($this.data("orig-text"));
+					}
+
 				}else{
 					$this.text(localStorage.getItem(settings.storageKey));
+
+					if ($this.text() == "" || $this.text() == "null") {
+						$this.text($this.data("orig-text"));
+					}
 				}
 			}
 			
 			$this.focus(function(){
 				var focusText = $this.text();
-				
+
 				$this.addClass("sf-focus");
 				
 				settings.onStart.apply(this,[$(this),focusText]);
@@ -89,6 +100,8 @@
 					localStorage.setItem(settings.storageKey,$this.text());
 					settings.afterSave.apply(this,[$(this),blurText]);
 				}
+
+				$this.attr("data-orig-text",$this.text());
 				
 				$this.removeClass("sf-blur");
 			});
