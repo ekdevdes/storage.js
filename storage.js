@@ -1,5 +1,5 @@
 /*
-	Storage.js v1.6.2
+	Storage.js v1.7 beta
 
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
