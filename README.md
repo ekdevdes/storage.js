@@ -31,6 +31,12 @@ $('#theElement').storage({storageKey:'storageKey'});
 
 __That's it! Have Fun!__
 
+TODO
+----
+
++  Add `data-*` attribute support
++  Update Coffeescript file with cookies.js support
+
 
 Bug Reporter & Feature Requests
 ------------
