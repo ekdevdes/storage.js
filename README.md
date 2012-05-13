@@ -12,10 +12,11 @@ First include the latest version of jQuery
 <script src="http://code.jquery.com/jquery.min.js"></script>
 ```  
 
-Next, download and include Storage.js  
+Next, download and include Storage.js and Cookies.js (used for IE Support) 
 
 ``` html
 <script src="/path/to/storage.min.js"></script>
+<script src="/path/to/cookies.js"></script>
 ```
 
 Last but not least, call Storage.js on whatever elements you wish to editable.
