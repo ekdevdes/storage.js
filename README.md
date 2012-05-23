@@ -1,4 +1,4 @@
-Storage.js v1.6.2
+Storage.js v1.7beta
 =========
 
 If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).
@@ -12,9 +12,10 @@ First include the latest version of jQuery
 <script src="http://code.jquery.com/jquery.min.js"></script>
 ```  
 
-Next, download and include Storage.js  
+Next, download and include Storage.js and Cookies.js (used for IE Support) 
 
 ``` html
+<script src="/path/to/cookies.js"></script>
 <script src="/path/to/storage.min.js"></script>
 ```
 
@@ -29,6 +30,12 @@ $('#theElement').storage({storageKey:'storageKey'});
 +	For a complete list of options you can pass please refer to the [API &amp; Options Section of the Website](http://ek.alphaschildren.org/projects/storagejs/#api-options)
 
 __That's it! Have Fun!__
+
+TODO
+----
+
++  Add `data-*` attribute support
++  Update Coffeescript file with cookies.js support
 
 
 Bug Reporter & Feature Requests

@@ -1,5 +1,5 @@
 /*
-	Storage.js v1.6.2
+	Storage.js v1.7 beta
 
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
@@ -34,7 +34,6 @@
 
 (function ($){
 
-	//name our plugin after "$.fn.". in this case our plugin name is simpleSpy
 	$.fn.storage = function(options){
 		
 		var defaults = {
@@ -57,6 +56,7 @@
 
 			if(settings.store){
 				localStorage.setItem(origKey,$text);
+				cookie.set(origKey,$text);
 			}
 
 			$this.attr('contenteditable','');
@@ -64,6 +64,7 @@
 			if (settings.store) {
 				if(settings.revert){
 					$this.text(localStorage.getItem(origKey));
+					$this.text(cookie.get(origKey));
 
 					if ($this.text() == "" || $this.text() == "null") {
 						$this.text($this.data("orig-text"));
@@ -71,6 +72,7 @@
 
 				}else{
 					$this.text(localStorage.getItem(settings.storageKey));
+					$this.text(cookie.get(settings.storageKey));
 
 					if ($this.text() == "" || $this.text() == "null") {
 						$this.text($this.data("orig-text"));
@@ -98,6 +100,7 @@
 				if (settings.store) {
 					settings.beforeSave.apply(this,[$(this),blurText]);
 					localStorage.setItem(settings.storageKey,$this.text());
+					cookie.set(settings.storageKey,$this.text());
 					settings.afterSave.apply(this,[$(this),blurText]);
 				}
 
