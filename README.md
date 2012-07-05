@@ -12,7 +12,15 @@ First include the latest version of jQuery
 <script src="http://code.jquery.com/jquery.min.js"></script>
 ```  
 
-Next, download and include Storage.js and Cookies.js (used for IE Support) 
+Next, include Storage.js and Cookies.js (a dependency of Storage.js used for IE Support) in your project
+
+Please Note:
++  We are using the link to storage.js and cookies.js on storage.js's new CDN 
+  +  Unminified CDN Link: http://cdn.jsdelivr.net/storagejs/1.7/storage.js
+  +  Minified CDN Link: http://cdn.jsdelivr.net/storagejs/1.7/storage.min.js
+  +  cookies.js CDN Link: http://cdn.jsdelivr.net/cookiejs/0.1/cookie.min.js
++  You can download and include storage.js and cookies.js if you want to but it's not necessary anymore
+
 
 ``` html
 <script src="/path/to/cookies.js"></script>
