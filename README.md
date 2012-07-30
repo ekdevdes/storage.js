@@ -7,7 +7,7 @@ Please note that the coffescript file will be updated from now on but will remai
 
 Usage
 -----
-##[Need an example of using Storage.js to save the new text of the element to your Database? Look no further.](http://ethankr.com/projects/storagejs/ajax-example/)
+[Need an example of using Storage.js to save the new text of the element to your Database? Look no further.](http://ethankr.com/projects/storagejs/ajax-example/)
 
 First include the latest version of jQuery  
 
