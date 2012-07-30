@@ -1,7 +1,9 @@
-Storage.js v1.7
+Storage.js v2.0
 =========
 
 If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).
+
+Please note that the coffescript file will be updated from now on but will remain for reference.
 
 Usage
 -----
@@ -14,17 +16,11 @@ First include the latest version of jQuery
 
 Next, include Storage.js and Cookies.js (a dependency of Storage.js used for IE Support) in your project
 
-Please Note:
-+  We are using the link to storage.js and cookies.js on storage.js's new CDN 
-  +  Unminified CDN Link: http://cdn.jsdelivr.net/storagejs/1.7/storage.js
-  +  Minified CDN Link: http://cdn.jsdelivr.net/storagejs/1.7/storage.min.js
-  +  cookies.js CDN Link: http://cdn.jsdelivr.net/cookiejs/0.1/cookie.min.js
-+  You can download and include storage.js and cookies.js if you want to but it's not necessary anymore
-
+Please note: our CDN has not update to version 2.0 yet so for right we recomend you download 2.0 and manually include it in your project. However the link to cookies.js on our CDN is valid
 
 ``` html
 <script src="http://cdn.jsdelivr.net/cookiejs/0.1/cookie.min.js"></script>
-<script src="http://cdn.jsdelivr.net/storagejs/1.7/storage.min.js"></script>
+<script src="/path/to/storage.min.js"></script>
 ```
 
 Last but not least, call Storage.js on whatever elements you wish to editable.
@@ -43,7 +39,6 @@ TODO
 ----
 
 +  Add `data-*` attribute support
-+  Update Coffeescript file with cookies.js support
 
 
 Bug Reporter & Feature Requests
