@@ -1,5 +1,5 @@
 /*
-	Storage.js v2.0
+	Storage.js v1.6.2
 
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
@@ -65,6 +65,11 @@
                     localStorage.setItem(key,$(objects[i]).data('orig-text'));
                     cookie.set(key,$(objects[i]).data('orig-text'));
                     $(objects[i]).text($(objects[i]).data('orig-text'));
+                    
+                    if ($(objects[i]).text() == "" || $(objects[i]).text() == "null") {
+                        $(objects[i]).text($(objects[i]).data('orig-text'));
+                    }
+                    
                     //and cookies.js
                     
                 }else{
@@ -72,6 +77,11 @@
                     
                     $(objects[i]).text(localStorage.getItem(key));
                     $(objects[i]).text(cookie.get(key));
+                    
+                    if ($(objects[i]).text() == "" || $(objects[i]).text() == "null") {
+                        $(objects[i]).text($(objects[i]).data('orig-text'));
+                    }
+                    
                     // and cookies.js
                 }
                 
