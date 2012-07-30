@@ -1,5 +1,5 @@
 /*
-	Storage.js v1.7 beta
+	Storage.js v1.6.2
 
 	Storage.js jQuery Plugin (C) 2011 Ethan Kramer
 	
@@ -47,68 +47,106 @@
 				},
 			settings = $.extend({},defaults,options);
 		
-		return this.each(function(){
-			var $this = $(this),
-				$text = $this.text(),
-				origKey = "orig" + settings.storageKey;
-				
-			$this.attr("data-orig-text",$text);
+	    var objects = $(this),
+	        keys = [];
+	    
+        if (settings.store) {
 
-			if(settings.store){
-				localStorage.setItem(origKey,$text);
-				cookie.set(origKey,$text);
-			}
+            
+            for (var i=0; i < objects.length; i++) {
+            
+               key = settings.storageKey + '-' + i;
+               $(objects[i]).attr('data-orig-text',$(objects[i]).text());
+                
+                if (settings.revert) {
+                    
+                    // set localstorage and cookies.js to the current value of the element
+                    
+                    localStorage.setItem(key,$(objects[i]).data('orig-text'));
+                    cookie.set(key,$(objects[i]).data('orig-text'));
+                    $(objects[i]).text($(objects[i]).data('orig-text'));
+                    //and cookies.js
+                    
+                }else{
+                    
+                    
+                    $(objects[i]).text(localStorage.getItem(key));
+                    $(objects[i]).text(cookie.get(key));
+                    // and cookies.js
+                }
+                
+                keys.push(key);
+                $(objects[i]).attr('data-key',key);
+                
+                
+    	    }
+    	}
 
-			$this.attr('contenteditable','');
-			
-			if (settings.store) {
-				if(settings.revert){
-					$this.text(localStorage.getItem(origKey));
-					$this.text(cookie.get(origKey));
-
-					if ($this.text() == "" || $this.text() == "null") {
-						$this.text($this.data("orig-text"));
-					}
-
-				}else{
-					$this.text(localStorage.getItem(settings.storageKey));
-					$this.text(cookie.get(settings.storageKey));
-
-					if ($this.text() == "" || $this.text() == "null") {
-						$this.text($this.data("orig-text"));
-					}
-				}
-			}
-			
-			$this.focus(function(){
-				var focusText = $this.text();
-
-				$this.addClass("sf-focus");
-				
-				settings.onStart.apply(this,[$(this),focusText]);
-				
-			});
-			
-			$this.blur(function(){
-				var blurText = $this.text();
-				
-				$this.removeClass("sf-focus");
-				$this.addClass("sf-blur");
-				
-				settings.onExit.apply(this,[$(this),blurText]);
-				
-				if (settings.store) {
-					settings.beforeSave.apply(this,[$(this),blurText]);
-					localStorage.setItem(settings.storageKey,$this.text());
-					cookie.set(settings.storageKey,$this.text());
-					settings.afterSave.apply(this,[$(this),blurText]);
-				}
-
-				$this.attr("data-orig-text",$this.text());
-				
-				$this.removeClass("sf-blur");
-			});
-		});
+	    
+	    return this.each(function(){
+	        
+	        var $this = $(this),
+	            sKey = $this.data('key');
+	            
+	        $this.attr('contenteditable','');
+	        
+	        
+	        // when the user has clicked on the element
+	        $this.focus(function(){
+	            
+	            var focusText = $(this).text();
+	            
+	            // add a class of sf-focus to the element
+	            $this.addClass("sf-focus");
+	            
+	            // call the function the user passed in
+	            settings.onStart.apply(this,[$(this),focusText]);
+	            
+	        });
+	        
+	        // after the user has clicked away from the element
+	        $this.blur(function(){
+	            
+	            var blurText = $(this).text();
+	            
+	            // remove the sf-focus class
+                $this.removeClass("sf-focus");
+                
+                // add an sf-blur class
+            	$this.addClass("sf-blur");
+            	
+            	// then call the onExit function
+            	
+            	settings.onExit.apply(this,[$(this),blurText]);
+	            
+	            // save new text to localStorage
+	            
+	            if (settings.store) {
+	                
+	                // call the before save function
+	                settings.beforeSave.apply(this,[$(this),blurText]);
+	                
+	                // save new text of element to localstorage
+	                localStorage.setItem(sKey,blurText);
+	                
+	                // save it to cookies.js
+	                cookie.set(sKey,blurText);
+	                
+	                // call the afterSave function
+	                settings.afterSave.apply(this,[$(this),blurText]);
+	                
+	                
+	            	                
+	            }
+	            
+	            // remove the class sf-blur
+	            
+	            $this.removeClass("sf-blur");
+	            
+	        });
+	        
+	        
+	    });
 	};
 
 })(jQuery);
