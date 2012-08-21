@@ -17,11 +17,11 @@ First include the latest version of jQuery
 
 Next, include Storage.js and Cookies.js (a dependency of Storage.js used for IE Support) in your project
 
-Please note: our CDN has not update to version 2.0 yet so for right we recomend you download 2.0 and manually include it in your project. However the link to cookies.js on our CDN is valid
+Please Note: You can find the unminified version at: http://cdn.jsdelivr.net/storagejs/2.0/storage.js
 
 ``` html
 <script src="http://cdn.jsdelivr.net/cookiejs/0.1/cookie.min.js"></script>
-<script src="/path/to/storage.min.js"></script>
+<script src="http://cdn.jsdelivr.net/storagejs/2.0/storage.min.js"></script>
 ```
 
 Last but not least, call Storage.js on whatever elements you wish to editable.
