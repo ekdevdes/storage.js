@@ -1,10 +1,10 @@
 {
 	"name":"jquery.storage",
-	"version":"1.6.2",
+	"version":"2.0",
 	"title":"Storage.js",
 	"author":{
 		"name" : "Ethan Kramer",
-		"url" : "http://forrst.me/ethankr"
+		"url" : "http://ethankr.com"
 	},
 	"licenses" : [
 		{
@@ -17,7 +17,7 @@
 		}
 	],
 	"dependencies" : {
-		"jquery" : "1.5"
+		"jquery" : "1.8"
 	},
 	"keywords" :[
 		"html5",
@@ -25,11 +25,11 @@
 		"page edit",
 		"inline editing"
 	],
-	"homepage" : "http://ek.alphaschildren.org/projects/storagejs/",
+	"homepage" : "http://ethankr.com/projects/storagejs/",
 	"maintainers" : [
 		{
 			"name" : "Ethan Kramer",
-			"url" : "http://forrst.me/ethankr"
+			"url" : "http://ethankr.com"
 		}
 	],
 	"files" : [

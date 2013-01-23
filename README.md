@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 Storage.js v1.7
+=======
+Storage.js v2.0
+>>>>>>> b682cf1e4e04374cb95bf5341480c10e852821f1
 =========
 
 If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).
 
+Please note that the coffescript file will be updated from now on but will remain for reference.
+
 Usage
 -----
+[Need an example of using Storage.js to save the new text of the element to your Database? Look no further.](http://ethankr.com/projects/storagejs/ajax-example/)
 
 First include the latest version of jQuery  
 
@@ -12,11 +19,13 @@ First include the latest version of jQuery
 <script src="http://code.jquery.com/jquery.min.js"></script>
 ```  
 
-Next, download and include Storage.js and Cookies.js (used for IE Support) 
+Next, include Storage.js and Cookies.js (a dependency of Storage.js used for IE Support) in your project
+
+Please Note: You can find the unminified version at: http://cdn.jsdelivr.net/storagejs/2.0/storage.js
 
 ``` html
-<script src="/path/to/cookies.js"></script>
-<script src="/path/to/storage.min.js"></script>
+<script src="http://cdn.jsdelivr.net/cookiejs/0.1/cookie.min.js"></script>
+<script src="http://cdn.jsdelivr.net/storagejs/2.0/storage.min.js"></script>
 ```
 
 Last but not least, call Storage.js on whatever elements you wish to editable.
@@ -35,7 +44,6 @@ TODO
 ----
 
 +  Add `data-*` attribute support
-+  Update Coffeescript file with cookies.js support
 
 
 Bug Reporter & Feature Requests
