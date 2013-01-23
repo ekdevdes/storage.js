@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Storage.js v1.7
-=======
 Storage.js v2.0
->>>>>>> b682cf1e4e04374cb95bf5341480c10e852821f1
 =========
 
 If you've created a site (or sites) or know of a site (or sites) using Storage.js, add its URL the official ["Sites using Storage.js wiki"](https://github.com/ekdevdes/storage.js/wiki/Sites-using-Storage.js).
