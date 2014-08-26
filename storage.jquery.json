@@ -4,7 +4,7 @@
 	"title":"Storage.js",
 	"author":{
 		"name" : "Ethan Kramer",
-		"url" : "http://ethankr.com"
+		"url" : "http://ek.alphaschildren.org"
 	},
 	"licenses" : [
 		{
@@ -29,7 +29,6 @@
 	"bugs": "https://github.com/ekdevdes/storage.js/issues",
     "homepage": "https://github.com/ekdevdes/storage-js",
     "docs": "https://ethankr.com/projects/storagejs",
-    "download": "http://code.jquery.com/#color",
 	"maintainers" : [
 		{
 			"name" : "Ethan Kramer",
